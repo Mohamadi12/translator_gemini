@@ -3,7 +3,7 @@
 import { translate } from "@/actions/translate";
 import { useState } from "react";
 import DropDown from "./components/DropDown";
-
+import VoiceRecorder from "./components/VoiceRecorder";
 
 const languageOptions = [
   { value: "en", label: "English" },
@@ -33,7 +33,7 @@ const Home = () => {
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <form
-           action={async (formData) => {
+          action={async (formData) => {
             const result = await translate(formData);
             setTranslatedText(result.translation);
           }}
@@ -76,12 +76,19 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <button
-            type="submit"
-            className="p-2  rounded-md bg-slate-800 text-white"
-          >
-            translate
-          </button>
+          <div className="flex flex-row items-center gap-2">
+            <div>
+              <button
+                type="submit"
+                className="p-2 rounded-md bg-slate-800 text-white"
+              >
+                translate
+              </button>
+            </div>
+            <div className="items-center bg-black text-white">
+              {languageFrom ==="en" && <VoiceRecorder />}
+            </div>
+          </div>
         </form>
       </main>
     </div>
