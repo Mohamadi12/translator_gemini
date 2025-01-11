@@ -1,6 +1,6 @@
 "use client";
 
-import { translate } from "@/actions/translate";
+import { translate } from "../actions/translate";
 import { useState } from "react";
 import DropDown from "./components/DropDown";
 import VoiceRecorder from "./components/VoiceRecorder";

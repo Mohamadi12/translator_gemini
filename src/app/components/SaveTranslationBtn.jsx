@@ -1,5 +1,5 @@
 "use client";
-import { saveTranslation } from "@/actions/save-translation";
+import { saveTranslation } from "../../actions/save-translation";
 import { Bookmark } from "lucide-react";
 
 export default function SaveBtn({
